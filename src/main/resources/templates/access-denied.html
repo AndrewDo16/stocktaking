@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:include="~{ 'bootstrap/header' }"></th:block>
+<body>
+<div class="container mt-4">
+    <h1><span th:text="${name}">Name</span>, you are not allowed to access to the page.</h1>
+</div>
+</body>
+<th:block th:include="~{ 'bootstrap/footer' }"></th:block>
+</html>

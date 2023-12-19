@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:include="~{ 'bootstrap/header' }"></th:block>
+<body>
+
+<div class="container mt-4">
+    <h1>Вы действительно хотите выйти?</h1>
+    <form action="/logout" method="post" th:action="@{/logout}">
+        <p><input type="submit" value="Выход"></p>
+    </form>
+</div>
+</body>
+<th:block th:include="~{ 'bootstrap/footer' }"></th:block>
+</html>
