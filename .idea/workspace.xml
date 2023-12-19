@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67253450-55d5-4ad6-a222-b43694a046e0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/demospringsecurityform/account/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/whiteship/demospringsecurityform/account/SignUpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/demospringsecurityform/account/UserAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/whiteship/demospringsecurityform/account/UserAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/demospringsecurityform/book/Book.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/demospringsecurityform/book/BookRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/demospringsecurityform/common/DefaultDataGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/whiteship/demospringsecurityform/common/DefaultDataGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/demospringsecurityform/form/SampleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/whiteship/demospringsecurityform/form/SampleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/demospringsecurityform/form/SampleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/whiteship/demospringsecurityform/form/SampleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/me/whiteship/demospringsecurityform/form/SampleServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/me/whiteship/demospringsecurityform/form/SampleServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/whiteship/demospringsecurityform/model/tech/Computer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/whiteship/demospringsecurityform/model/tech/Printer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/whiteship/demospringsecurityform/model/tech/Tech.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,13 +20,18 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -54,7 +55,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "dev",
     "last_opened_file_path": "/home/andrey/IdeaProjects/stocktaking",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -62,6 +63,11 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -83,9 +89,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DemoSpringSecurityFormApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="StocktakingApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="web" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="me.whiteship.demospringsecurityform.DemoSpringSecurityFormApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="me.whiteship.demospringsecurityform.StocktakingApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -104,7 +110,7 @@
       <workItem from="1702983456137" duration="1326000" />
       <workItem from="1702985670837" duration="3922000" />
       <workItem from="1702989624205" duration="2718000" />
-      <workItem from="1703008473935" duration="686000" />
+      <workItem from="1703008473935" duration="3274000" />
     </task>
     <servers />
   </component>
