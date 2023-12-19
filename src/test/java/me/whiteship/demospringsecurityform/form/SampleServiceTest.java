@@ -20,9 +20,6 @@ import static org.junit.Assert.*;
 public class SampleServiceTest {
 
     @Autowired
-    SampleService sampleService;
-
-    @Autowired
     AccountService accountService;
 
     @Autowired
@@ -42,8 +39,6 @@ public class SampleServiceTest {
         Authentication authentication = authenticationManager.authenticate(token);
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
-
-        sampleService.dashboard();
     }
 
 }

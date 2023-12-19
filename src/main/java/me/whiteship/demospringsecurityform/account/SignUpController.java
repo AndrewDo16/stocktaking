@@ -12,7 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/signup")
 public class SignUpController {
 
-    @Autowired AccountService accountService;
+    private final AccountService accountService;
+
+    @Autowired
+    public SignUpController(AccountService accountService) {
+        this.accountService = accountService;
+    }
 
     @GetMapping
     public String signupForm(Model model) {
