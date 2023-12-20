@@ -8,12 +8,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import ru.stocktaking.stocktaking.model.building.Cabinet;
 import ru.stocktaking.stocktaking.model.building.dto.CabinetDTO;
-import ru.stocktaking.stocktaking.service.TechService;
+import ru.stocktaking.stocktaking.service.tech.TechService;
 import ru.stocktaking.stocktaking.service.building.BuildingService;
 import ru.stocktaking.stocktaking.service.building.CabinetService;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by AndreyDo16 on 20.12.2023
@@ -51,6 +52,19 @@ public class CabinetController {
 
         model.addAttribute("cabinets", cabinetDTOList);
         return "building/one_cabinet";
+    }
+
+    @GetMapping("/cabinet/{cabinetId}")
+    public String showCabinetAttribute(@PathVariable("cabinetId") int cabinetId,
+                                       Model model) {
+        Optional<Cabinet> cabinet = cabinetService.findById(cabinetId);
+        boolean hasTechInCabinet = cabinetService.hasTechInCabinet(cabinetId);
+        boolean hasFurnitureInCabinet = cabinetService.hasFurnitureInCabinet(cabinetId);
+        model.addAttribute("cabinet", cabinet.get());
+        model.addAttribute("hasTechInCabinet", hasTechInCabinet);
+        model.addAttribute("hasFurnitureInCabinet", hasFurnitureInCabinet);
+
+        return "building/cabinet_attribute";
     }
 
 }

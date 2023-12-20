@@ -12,4 +12,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface TechRepository extends JpaRepository<Tech, Integer> {
     long countByCabinet(Cabinet cabinet);
+
+    boolean existsByCabinetId(int cabinetId);
 }

@@ -13,7 +13,7 @@
                 </button>
 
                 <div class="dropdown-menu">
-                    <a th:href="@{/building/department/{department_id}/cabinet/{cabinet_id}(department_id=${cabinet.getDepartment().getId()})(cabinet_id=${cabinet.getCabinet().getId()})}" class="dropdown-item">
+                    <a th:href="@{/building/department/cabinet/{cabinet_id}(cabinet_id=${cabinet.getCabinet().getId()})}" class="dropdown-item">
                         <div class="info-block">
                             <span class="info-label">Корпус:</span>
                             <span class="info-value" th:text="${cabinet.getCabinet().getCorp()}"></span>

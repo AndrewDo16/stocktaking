@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:include="~{ 'bootstrap/header' }"></th:block>
+<body>
+<div class="container mt-4">
+    <h1 class="display-4">Информация о кабинете</h1>
+
+    <div th:each="cabinet : ${cabinet}" class="col-md-4 mb-3">
+        <div style="border: 1px solid #ccc; padding: 15px; border-radius: 8px; background-color: #f8f9fa;">
+            <div class="info-block mt-2" style="font-family: 'Arial', sans-serif; font-size: 18px; color: #007bff;">
+                <span th:text="${'Кабинет №: ' + cabinet.getCabinetNumber()}"></span>
+            </div>
+
+            <div class="info-block mt-2" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                <span class="info-label" style="font-weight: bold; color: #28a745;">Корпус:</span>
+                <span class="info-value" th:text="${cabinet.getCorp()}"></span>
+            </div>
+            <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                <span class="info-label" style="font-weight: bold; color: #6c757d;">Этаж:</span>
+                <span class="info-value" th:text="${cabinet.getFloor()}"></span>
+            </div>
+            <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                <span class="info-label" style="font-weight: bold; color: #dc3545;">Список сотрудников:</span>
+                <div th:each="employee : ${cabinet.getEmployees()}">
+                    <span class="info-value" th:text="${employee.getName() + ' ' + employee.getSurname()}"></span><br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <div th:if="${hasTechInCabinet}" class="list-group-item dropdown position-static">
+                <button class="btn btn-outline-primary dropdown-toggle" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" style="
+                        margin-left: 160px;
+                        width: 176px;">
+                    <span th:text="${'Техника'}"></span>
+                </button>
+
+                <div class="dropdown-menu">
+                    <a th:href="@{/tech/{cabinetId}(cabinet_id=${cabinet.getId()})}" class="dropdown-item">
+                        <div class="info-block">
+                            <span class="info-label">Общее количество оборудования:</span>
+                            <span class="info-value" th:text="${'zero'}"></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <div th:if="${hasFurnitureInCabinet}" class="list-group-item dropdown position-static">
+                <button class="btn btn-outline-primary dropdown-toggle" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" style="
+                        margin-left: 160px;
+                        width: 176px;">
+                    <span th:text="${'Мебель'}"></span>
+                </button>
+
+                <div class="dropdown-menu">
+                    <a th:href="@{/furniture/{cabinetId}(cabinet_id=${cabinet.getId()})}" class="dropdown-item">
+                        <div class="info-block">
+                            <span class="info-label">Общее количество мебели:</span>
+                            <span class="info-value" th:text="${'zero'}"></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+</body>
+<th:block th:include="~{ 'bootstrap/footer' }"></th:block>
+</html>

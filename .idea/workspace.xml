@@ -5,18 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67253450-55d5-4ad6-a222-b43694a046e0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/model/building/dto/CabinetDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/controller/tech/TechController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/model/furniture/Furniture.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/repository/furniture/FurnitureRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/service/furniture/FurnitureService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/building/cabinet_attribute.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/tech/tech_in_cabinet.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/common/DefaultDataGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/common/DefaultDataGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/controller/building/CabinetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/controller/building/CabinetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/model/tech/Tech.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/model/tech/Tech.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/repository/tech/TechRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/repository/tech/TechRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/service/TechService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/service/tech/TechService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/service/building/CabinetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/service/building/CabinetService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/bootstrap/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bootstrap/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/building/one_cabinet.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/building/one_cabinet.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/common/DefaultDataGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/common/DefaultDataGenerator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/controller/building/CabinetController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/controller/building/CabinetController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/model/tech/Tech.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/model/tech/Tech.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/repository/tech/TechRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/repository/tech/TechRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/service/TechService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/service/building/CabinetService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/service/building/CabinetService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/bootstrap/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/bootstrap/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/building/get_all.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/building/get_all.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/building/one_cabinet.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/building/one_cabinet.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,8 +34,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="HTML File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -118,7 +125,7 @@
       <workItem from="1702983456137" duration="1326000" />
       <workItem from="1702985670837" duration="3922000" />
       <workItem from="1702989624205" duration="2718000" />
-      <workItem from="1703008473935" duration="28198000" />
+      <workItem from="1703008473935" duration="33947000" />
     </task>
     <servers />
   </component>

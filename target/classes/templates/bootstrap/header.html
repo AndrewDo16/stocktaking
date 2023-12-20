@@ -60,7 +60,4 @@
 </nav>
 <div class="container mt-4">
   <!-- Здесь ваш контент -->
-  <div th:if="${#authorization.expression('isAuthenticated()')}">
-      <p th:text="${#authorization.getAuthentication().getAuthorities()}"></p>
-  </div>
 </div>
