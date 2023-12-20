@@ -5,26 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67253450-55d5-4ad6-a222-b43694a046e0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/controller/building/CabinetController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/controller/building/DepartmentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/model/building/Department.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/model/building/dto/DepartmentDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/repository/building/DepartmentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/service/building/DepartmentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/building/get_all_departments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/model/building/dto/CabinetDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/controller/building/BuildingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/controller/building/BuildingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/model/building/Cabinet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/model/building/Cabinet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/repository/building/CabinetRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/repository/building/CabinetRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/common/DefaultDataGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/common/DefaultDataGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/controller/building/CabinetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/controller/building/CabinetController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/service/building/CabinetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/service/building/CabinetService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/building/get_all.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/building/get_all.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/building/one.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/building/one_cabinet.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/controller/building/BuildingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/controller/building/BuildingController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/model/building/Cabinet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/model/building/Cabinet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/repository/building/CabinetRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/repository/building/CabinetRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/bootstrap/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bootstrap/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/building/one_cabinet.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/building/one_cabinet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/common/DefaultDataGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/common/DefaultDataGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/controller/building/CabinetController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/controller/building/CabinetController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/service/building/CabinetService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/service/building/CabinetService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/bootstrap/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/bootstrap/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/building/get_all.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/building/get_all.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/building/one.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/building/one_cabinet.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/building/one_cabinet.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +118,7 @@
       <workItem from="1702983456137" duration="1326000" />
       <workItem from="1702985670837" duration="3922000" />
       <workItem from="1702989624205" duration="2718000" />
-      <workItem from="1703008473935" duration="24808000" />
+      <workItem from="1703008473935" duration="28198000" />
     </task>
     <servers />
   </component>

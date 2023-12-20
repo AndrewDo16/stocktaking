@@ -16,14 +16,21 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Ваш логотип</a>
   <ul class="navbar-nav ml-auto">
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Dropdown link
-      </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
+    <li class="nav-item active">
+      <div th:if="${#authorization.expr('isAuthenticated()')}">
+        <a class="nav-link" href="/building">Выбор филиала<span class="sr-only">(текущая)</span></a>
+      </div>
+    </li>
+    <li class="nav-item dropdown" th:authorize="${#authorization.expression('isAuthenticated()')}">
+      <div th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown link
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
       </div>
     </li>
   </ul>
@@ -53,4 +60,7 @@
 </nav>
 <div class="container mt-4">
   <!-- Здесь ваш контент -->
+  <div th:if="${#authorization.expression('isAuthenticated()')}">
+      <p th:text="${#authorization.getAuthentication().getAuthorities()}"></p>
+  </div>
 </div>

@@ -21,6 +21,7 @@ public class DefaultDataGenerator implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
         Account keesun = createUser("keesun");
         Account whiteship = createUser("whiteship");
+        Account admin = createAdmin("admin");
     }
 
     private Account createUser(String usename) {
@@ -28,6 +29,13 @@ public class DefaultDataGenerator implements ApplicationRunner {
         account.setUsername(usename);
         account.setPassword("123");
         account.setRole("USER");
+        return accountService.createNew(account);
+    }
+    private Account createAdmin(String usename) {
+        Account account = new Account();
+        account.setUsername(usename);
+        account.setPassword("admin");
+        account.setRole("ADMIN");
         return accountService.createNew(account);
     }
 }
