@@ -9,37 +9,25 @@ import javax.persistence.*;
 import java.util.List;
 
 /**
- * Created by AndreyDo16 on 19.12.2023
+ * Created by AndreyDo16 on 20.12.2023
  */
 
 @Entity
-@Table(name = "cabinet")
+@Table(name = "department")
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class Cabinet {
+@NoArgsConstructor
+public class Department {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @Column(name = "name")
+    private String name;
+
     @OneToOne
     @JoinColumn(name = "building_id")
     private Building building;
 
-    @OneToOne
-    @JoinColumn(name = "department_id")
-    private Department department;
-
-    @OneToMany(mappedBy = "cabinet")
-    private List<Employee> employees;
-
-    @Column(name = "cabinet_number")
-    private int cabinetNumber;
-
-    @Column(name = "corp")
-    private String corp;
-
-    @Column(name = "floor")
-    private int floor;
 }

@@ -50,17 +50,6 @@ public class BuildingController {
         return "building/get_all";
     }
 
-    @GetMapping("/{buildingId}")
-    public String showBuildingAttribute(@PathVariable("buildingId") int buildingId,
-                                        Model model) {
-        Optional <Building> building = buildingService.findOneBuilding(buildingId);
-        if (building.isPresent()) {
-            model.addAttribute("building", building.get());
-            return "building/one";
-        }
-        return "building/one";
-    }
-
     @ResponseBody
     @GetMapping("all")
     public ResponseEntity<List<Building>> getAllBuilding() {
