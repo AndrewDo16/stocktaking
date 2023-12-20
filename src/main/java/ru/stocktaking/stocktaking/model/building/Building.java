@@ -21,6 +21,9 @@ public class Building {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @Column(name = "name")
+    private String name;
+
     @Column(name = "region")
     private String region;
 

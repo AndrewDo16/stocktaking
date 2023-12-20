@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:include="~{ 'bootstrap/header' }"></th:block>
+<body>
+<!--<div class="container mt-4">-->
+<!--    <h1>Список зданий</h1>-->
+
+<!--    <div class="list-group">-->
+<!--        <div th:each="build : ${building}" class="list-group-item">-->
+<!--            <a th:href="@{/building/{build_id}(build_id=${build.getId()})}"-->
+<!--               th:text="${build.getName()}"-->
+<!--               class="btn btn-outline-primary">-->
+<!--                &lt;!&ndash; Возможно, добавьте сюда какой-то текст или переменную &ndash;&gt;-->
+<!--            </a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+<div class="container mt-4">
+    <h1 class="display-4">Список зданий</h1>
+
+    <div class="list-group">
+        <div th:each="build : ${building}" class="list-group-item dropdown position-static">
+            <button class="btn btn-outline-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span th:text="${build.getBuilding().getName()}"></span>
+            </button>
+
+            <div class="dropdown-menu">
+                <!-- Весь блок информации оформлен как ссылка -->
+                <a th:href="@{/building/{build_id}(build_id=${build.getBuilding().getId()})}" class="dropdown-item">
+                    <!-- Адрес отображается в одной строке -->
+                    <div>
+                        <span th:text="${'Адрес: ' + build.getBuilding().getRegion() + ' ' + build.getBuilding().getCity() + ' ' + build.getBuilding().getStreet() + ' ' + build.getBuilding().getBuildingNumber() }"></span>
+                    </div>
+                    <!-- Информация о кабинетах отображается в другой строке -->
+                    <div>
+                        <span th:text="${'Общее количество кабинетов: ' + build.getTotalCabinets() }"></span>
+                    </div>
+                    <div>
+                        <span th:text="${'Общее количество оборудования: ' + build.getTotalTech() }"></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+<th:block th:include="~{ 'bootstrap/footer' }"></th:block>
+</html>

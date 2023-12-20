@@ -1,5 +1,6 @@
 package ru.stocktaking.stocktaking.repository.tech;
 
+import ru.stocktaking.stocktaking.model.building.Cabinet;
 import ru.stocktaking.stocktaking.model.tech.Tech;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -10,4 +11,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TechRepository extends JpaRepository<Tech, Integer> {
+    long countByCabinet(Cabinet cabinet);
 }

@@ -5,12 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67253450-55d5-4ad6-a222-b43694a046e0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/whiteship/demospringsecurityform/model/tech/Computer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/whiteship/demospringsecurityform/model/tech/Printer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/whiteship/demospringsecurityform/model/tech/Tech.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/controller/building/BuildingController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/model/building/dto/BuildingDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/service/building/BuildingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/service/building/CabinetService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/building/get_all.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/building/one.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a9de163-3053-42fa-ae0b-ec0c2a775a76.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6a9de163-3053-42fa-ae0b-ec0c2a775a76.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a9de163-3053-42fa-ae0b-ec0c2a775a76/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6a9de163-3053-42fa-ae0b-ec0c2a775a76/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/model/building/Building.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/model/building/Building.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/model/tech/Tech.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/model/tech/Tech.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/repository/building/CabinetRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/repository/building/CabinetRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/repository/tech/TechRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/repository/tech/TechRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/bootstrap/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bootstrap/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/bootstrap/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bootstrap/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/demospringsecurityform/StocktakingApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/demospringsecurityform/account/AccessDeniedController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/demospringsecurityform/account/Account.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/demospringsecurityform/account/AccountContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/demospringsecurityform/account/AccountController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/demospringsecurityform/account/AccountRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/demospringsecurityform/account/AccountService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/demospringsecurityform/account/LogInOutController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/demospringsecurityform/account/SignUpController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/demospringsecurityform/account/UserAccount.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/demospringsecurityform/common/CurrentUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/demospringsecurityform/common/DefaultDataGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/demospringsecurityform/common/LoggingFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/demospringsecurityform/common/SecurityLogger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/demospringsecurityform/config/MethodSecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/demospringsecurityform/config/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/demospringsecurityform/form/SampleController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/demospringsecurityform/form/SampleService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/demospringsecurityform/model/tech/Computer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/demospringsecurityform/model/tech/Printer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/demospringsecurityform/model/tech/Tech.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/bootstrap/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/bootstrap/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/bootstrap/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/bootstrap/header.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +53,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="HTML File" />
         <option value="Class" />
       </list>
@@ -89,9 +123,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StocktakingApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="StocktakingApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="web" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="me.whiteship.demospringsecurityform.StocktakingApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.stocktaking.stocktaking.StocktakingApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -110,11 +144,38 @@
       <workItem from="1702983456137" duration="1326000" />
       <workItem from="1702985670837" duration="3922000" />
       <workItem from="1702989624205" duration="2718000" />
-      <workItem from="1703008473935" duration="3274000" />
+      <workItem from="1703008473935" duration="14296000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/controller/building/BuildingController.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/controller/building/BuildingController.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
