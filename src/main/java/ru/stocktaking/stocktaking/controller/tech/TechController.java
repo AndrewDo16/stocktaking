@@ -6,8 +6,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import ru.stocktaking.stocktaking.model.building.Cabinet;
+import ru.stocktaking.stocktaking.model.tech.Tech;
+import ru.stocktaking.stocktaking.model.tech.dto.TechComputerInfoDTO;
+import ru.stocktaking.stocktaking.model.tech.dto.TechPrinterInfoDTO;
 import ru.stocktaking.stocktaking.service.tech.TechService;
 import ru.stocktaking.stocktaking.service.building.CabinetService;
+
+import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by AndreyDo16 on 20.12.2023
@@ -26,9 +33,26 @@ public class TechController {
         this.cabinetService = cabinetService;
     }
 
-    @GetMapping("{cabinetId}")
+    @GetMapping("cabinet/{cabinetId}")
     public String getTechByCabinetId(@PathVariable("cabinetId") int cabinetId,
                                      Model model) {
-        return "tech/tech_by_cabinet";
+        List<Tech> techList = techService.findByCabinetId(cabinetId);
+
+        model.addAttribute("techList", techList);
+        return "tech/tech_in_cabinet";
+    }
+
+    @GetMapping("{techId}")
+    public String getInfoByTech(@PathVariable("techId") int techId,
+                                Model model) {
+
+        Object tech = techService.findInfoTech(techId);
+        if (tech.getClass().getSimpleName().equals("TechComputerInfoDTO")) {
+            model.addAttribute("techInfo", (TechComputerInfoDTO) tech);
+        } else {
+            model.addAttribute("techInfo", (TechPrinterInfoDTO) tech);
+
+        }
+        return "tech/tech_info";
     }
 }

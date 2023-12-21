@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:include="~{ 'bootstrap/header' }"></th:block>
+<body>
+
+<div class="container mt-4">
+    <h1 class="display-4">Информация о предмете</h1>
+
+    <div class="col-md-4 mb-3">
+        <div th:if="${techInfo != null && techInfo.getClass().getName() == 'ru.stocktaking.stocktaking.model.tech.dto.TechComputerInfoDTO'}">
+            <div style="border: 1px solid #ccc; padding: 15px; border-radius: 8px; background-color: #f8f9fa;">
+                <div class="info-block mt-2" style="font-family: 'Arial', sans-serif; font-size: 18px; color: #007bff;">
+                    <span th:text="${'Инвентарный номер №: ' + techInfo.getInventoryNumber()}"></span>
+                </div>
+
+                <div class="info-block mt-2" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                    <span class="info-label" style="font-weight: bold; color: #28a745;">Номер кабинета::</span>
+                    <span class="info-value" th:text="${techInfo.getCabinetNumber()}"></span>
+                </div>
+                <div class="info-block mt-2" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                    <span class="info-label" style="font-weight: bold; color: #28a745;">Серийный номер:</span>
+                    <span class="info-value" th:text="${techInfo.getSerialNumber()}"></span>
+                </div>
+                <div class="info-block mt-2" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                    <span class="info-label" style="font-weight: bold; color: #28a745;">Тип:</span>
+                    <span class="info-value" th:text="${techInfo.getType()}"></span>
+                </div>
+                <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                    <span class="info-label" style="font-weight: bold; color: #28a745;">Модель:</span>
+                    <span class="info-value" th:text="${techInfo.getModel()}"></span>
+                </div>
+                <div class="info-block mt-2" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                    <span class="info-label" style="font-weight: bold; color: #28a745;">Производитель::</span>
+                    <span class="info-value" th:text="${techInfo.getProducer()}"></span>
+                </div>
+                <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                    <span class="info-label" style="font-weight: bold; color: #dc3545;">Операционная система:</span>
+                                    <span class="info-value" th:text="${techInfo.getOperationSystem()}"></span>
+                </div>
+                <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                    <span class="info-label" style="font-weight: bold; color: #dc3545;">Дисплей:</span>
+                    <span class="info-value" th:text="${techInfo.getDisplay()}"></span>
+                </div>
+                <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                    <span class="info-label" style="font-weight: bold; color: #dc3545;">Материнская память:</span>
+                    <span class="info-value" th:text="${techInfo.getMotherBoard()}"></span>
+                </div>
+                <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                    <span class="info-label" style="font-weight: bold; color: #dc3545;">Процессор:</span>
+                    <span class="info-value" th:text="${techInfo.getProcessor()}"></span>
+                </div>
+                <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                    <span class="info-label" style="font-weight: bold; color: #dc3545;">Оперативная память:</span>
+                    <span class="info-value" th:text="${techInfo.getAmountRam()}"></span>
+                </div>
+                <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                    <span class="info-label" style="font-weight: bold; color: #dc3545;">Память:</span>
+                    <span class="info-value" th:text="${techInfo.getMemory() + ' ' + techInfo.getAmountOzu()}"></span>
+                </div>
+                <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                    <span class="info-label" style="font-weight: bold; color: #dc3545;">Дата регистрации:</span>
+                    <span class="info-value" th:text="${techInfo.getRegistrationDate()}"></span>
+                </div>
+                <div class="info-block"
+                     style="font-family: 'Arial', sans-serif; font-size: 16px; display: flex; align-items: center;">
+                    <span class="info-label" style="font-weight: bold;">На балансе?:</span>
+                    <span th:text="${techInfo.isActive() ? '&#8226;' : '&#8226;'}"
+                          th:style="${techInfo.isActive()} ? 'color: green; font-size: 45px; margin-left: 8px;' : 'color: red; font-size: 24px; margin-left: 8px;'"></span>
+                </div>
+            </div>
+        </div>
+
+        <div th:if="${techInfo != null && techInfo.getClass().getName() == 'ru.stocktaking.stocktaking.model.tech.dto.TechPrinterInfoDTO'}">
+            <div style="border: 1px solid #ccc; padding: 15px; border-radius: 8px; background-color: #f8f9fa;">
+                <div class="info-block mt-2" style="font-family: 'Arial', sans-serif; font-size: 18px; color: #007bff;">
+                    <span th:text="${'Инвентарный номер №: ' + techInfo.getInventoryNumber()}"></span>
+                </div>
+                <div class="info-block mt-2" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                    <span class="info-label" style="font-weight: bold; color: #28a745;">Номер кабинета::</span>
+                    <span class="info-value" th:text="${techInfo.getCabinetNumber()}"></span>
+                </div>
+                <div class="info-block mt-2" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                    <span class="info-label" style="font-weight: bold; color: #28a745;">Серийный номер:</span>
+                    <span class="info-value" th:text="${techInfo.getSerialNumber()}"></span>
+                </div>
+                <div class="info-block mt-2" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                    <span class="info-label" style="font-weight: bold; color: #28a745;">Тип:</span>
+                    <span class="info-value" th:text="${techInfo.getType()}"></span>
+                </div>
+                <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                    <span class="info-label" style="font-weight: bold; color: #28a745;">Модель:</span>
+                    <span class="info-value" th:text="${techInfo.getModel()}"></span>
+                </div>
+                <div class="info-block mt-2" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                    <span class="info-label" style="font-weight: bold; color: #28a745;">Производитель::</span>
+                    <span class="info-value" th:text="${techInfo.getProducer()}"></span>
+                </div>
+                <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                    <span class="info-label" style="font-weight: bold; color: #dc3545;">Тип печати:</span>
+                    <span class="info-value" th:text="${techInfo.getPrintType()}"></span>
+                </div>
+                <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                    <span class="info-label" style="font-weight: bold; color: #dc3545;">Технология печати:</span>
+                    <span class="info-value" th:text="${techInfo.getPrintTechnology()}"></span>
+                </div>
+                <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                    <span class="info-label" style="font-weight: bold; color: #dc3545;">Скорость печати:</span>
+                    <span class="info-value" th:text="${techInfo.getPrintSpeed()}"></span>
+                </div>
+                <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                    <span class="info-label" style="font-weight: bold; color: #dc3545;">Дата регистрации:</span>
+                    <span class="info-value" th:text="${techInfo.getRegistrationDate()}"></span>
+                </div>
+                <div class="info-block"
+                     style="font-family: 'Arial', sans-serif; font-size: 16px; display: flex; align-items: center;">
+                    <span class="info-label" style="font-weight: bold;">На балансе?:</span>
+                    <span th:text="${techInfo.isActive() ? '&#8226;' : '&#8226;'}"
+                          th:style="${techInfo.isActive()} ? 'color: green; font-size: 45px; margin-left: 8px;' : 'color: red; font-size: 24px; margin-left: 8px;'"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+<th:block th:include="~{ 'bootstrap/footer' }"></th:block>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:include="~{ 'bootstrap/header' }"></th:block>
+<body>
+
+<div class="container mt-4">
+    <h1 class="display-4">Информация о предмете</h1>
+
+    <div class="col-md-4 mb-3">
+        <div style="border: 1px solid #ccc; padding: 15px; border-radius: 8px; background-color: #f8f9fa;">
+            <div class="info-block mt-2" style="font-family: 'Arial', sans-serif; font-size: 18px; color: #007bff;">
+                <span th:text="${'Инвентарный номер №: ' + furniture.getInventoryNumber()}"></span>
+            </div>
+
+            <div class="info-block mt-2" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                <span class="info-label" style="font-weight: bold; color: #28a745;">Тип:</span>
+                <span class="info-value" th:text="${furniture.getType()}"></span>
+            </div>
+            <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                <span class="info-label" style="font-weight: bold; color: #6c757d;">Модель:</span>
+                <span class="info-value" th:text="${furniture.getModel()}"></span>
+            </div>
+            <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                <span class="info-label" style="font-weight: bold; color: #6c757d;">Номер кабинета:</span>
+                <span class="info-value" th:text="${furniture.getCabinet().getCabinetNumber()}"></span>
+            </div>
+            <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                <span class="info-label" style="font-weight: bold; color: #6c757d;">Производитель:</span>
+                <span class="info-value" th:text="${furniture.getProducer()}"></span>
+            </div>
+            <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                <span class="info-label" style="font-weight: bold; color: #6c757d;">Материал:</span>
+                <span class="info-value" th:text="${furniture.getMaterial()}"></span>
+            </div>
+            <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                <span class="info-label" style="font-weight: bold; color: #dc3545;">Дата регистрации:</span>
+                <span class="info-value" th:text="${furniture.getRegistrationDate()}"></span>
+            </div>
+            <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px; display: flex; align-items: center;">
+                <span class="info-label" style="font-weight: bold;">На балансе?:</span>
+                <span th:text="${furniture.isActive() ? '&#8226;' : '&#8226;'}"
+                      th:style="${furniture.isActive()} ? 'color: green; font-size: 45px; margin-left: 8px;' : 'color: red; font-size: 24px; margin-left: 8px;'"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+<th:block th:include="~{ 'bootstrap/footer' }"></th:block>
+</html>

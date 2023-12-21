@@ -5,7 +5,9 @@
 <div class="container mt-4">
     <h1 th:text="${message}">Hello</h1>
     <div th:if="${#authorization.expr('isAuthenticated()')}">
-        <h2 th:text="${#authentication.name}">Name</h2>
+    </div>
+    <div th:unless="${#authorization.expr('isAuthenticated()')}">
+        <h2>Для дальнейшей работы необхоимо авторизироваться</h2>
     </div>
 </div>
 </body>

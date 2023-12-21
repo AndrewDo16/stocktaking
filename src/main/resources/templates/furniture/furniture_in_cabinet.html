@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:include="~{ 'bootstrap/header' }"></th:block>
+<body>
+<div class="container mt-4">
+    <h1 class="display-4">Список мебели</h1>
+
+    <div class="row">
+        <div th:each="furniture : ${furnitureList}" class="col-md-5 mb-3">
+            <div class="list-group-item dropdown position-static">
+                <button class="btn btn-outline-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span th:text="${'Инвентарный номер: ' + furniture.getInventoryNumber() + ' ' + furniture.getType()}"></span>
+                </button>
+
+                <div class="dropdown-menu">
+                    <a th:href="@{/furniture/{furniture_id}(furniture_id=${furniture.getId()})}" class="dropdown-item">
+                        <div class="info-block">
+                            <span class="info-label">Модель:</span>
+                            <span class="info-value" th:text="${furniture.getModel()}"></span>
+                        </div>
+                        <div class="info-block">
+                            <span class="info-label">Дата регистрации:</span>
+                            <span class="info-value" th:text="${furniture.getRegistrationDate()}"></span>
+                        </div>
+                        <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px; display: flex; align-items: center;">
+                            <span class="info-label" style="font-weight: bold;">На балансе?:</span>
+                            <span th:text="${furniture.isActive() ? '&#8226;' : '&#8226;'}"
+                                  th:style="${furniture.isActive()} ? 'color: green; font-size: 45px; margin-left: 8px;' : 'color: red; font-size: 24px; margin-left: 8px;'"></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</body>
+<th:block th:include="~{ 'bootstrap/footer' }"></th:block>
+</html>

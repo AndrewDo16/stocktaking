@@ -5,6 +5,7 @@ import ru.stocktaking.stocktaking.model.furniture.Furniture;
 import ru.stocktaking.stocktaking.repository.furniture.FurnitureRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by AndreyDo16 on 20.12.2023
@@ -21,6 +22,10 @@ public class FurnitureService {
 
     public List<Furniture> findByCabinetId(int cabinetId) {
         return furnitureRepository.findFurnitureByCabinetId(cabinetId);
+    }
+
+    public Optional<Furniture> findById(int furnitureId) {
+        return furnitureRepository.findById(furnitureId);
     }
 
 }

@@ -1,11 +1,10 @@
 package ru.stocktaking.stocktaking.account;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 public class AccountController {
 
     private final AccountService accountService;
@@ -15,9 +14,24 @@ public class AccountController {
         this.accountService = accountService;
     }
 
+    @ResponseBody
     @GetMapping("/account/{role}/{username}/{password}")
     public Account createAccount(@ModelAttribute Account account) {
         return accountService.createNew(account);
+    }
+
+    @PostMapping("account")
+    public String create(@ModelAttribute("account") Account account) {
+
+        accountService.createNew(account);
+
+        return "redirect:/admin/user";
+    }
+
+    @PostMapping("/account/{user_id}")
+    public String delete(@PathVariable("user_id") int userId) {
+        accountService.delete(userId);
+        return "redirect:/admin/user";
     }
 
 }

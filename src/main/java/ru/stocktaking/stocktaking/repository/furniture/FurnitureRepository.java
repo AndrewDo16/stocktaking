@@ -2,6 +2,7 @@ package ru.stocktaking.stocktaking.repository.furniture;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import ru.stocktaking.stocktaking.model.building.Cabinet;
 import ru.stocktaking.stocktaking.model.furniture.Furniture;
 
 import java.util.List;
@@ -14,4 +15,8 @@ import java.util.List;
 public interface FurnitureRepository extends JpaRepository<Furniture, Integer> {
     List<Furniture> findFurnitureByCabinetId(int cabinetId);
     boolean existsByCabinetId(int cabinetId);
+
+    long countByCabinet(Cabinet cabinet);
+
+    Furniture findFurnitureByInventoryNumber(long inventoryNumber);
 }

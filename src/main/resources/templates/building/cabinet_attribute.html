@@ -40,10 +40,10 @@
                 </button>
 
                 <div class="dropdown-menu">
-                    <a th:href="@{/tech/{cabinetId}(cabinet_id=${cabinet.getId()})}" class="dropdown-item">
+                    <a th:href="@{/tech/cabinet/{cabinetId}(cabinetId=${cabinet.getId()})}" class="dropdown-item">
                         <div class="info-block">
                             <span class="info-label">Общее количество оборудования:</span>
-                            <span class="info-value" th:text="${'zero'}"></span>
+                            <span class="info-value" th:text="${totalTech}"></span>
                         </div>
                     </a>
                 </div>
@@ -59,10 +59,10 @@
                 </button>
 
                 <div class="dropdown-menu">
-                    <a th:href="@{/furniture/{cabinetId}(cabinet_id=${cabinet.getId()})}" class="dropdown-item">
+                    <a th:href="@{/furniture/cabinet/{cabinetId}(cabinetId=${cabinet.getId()})}" class="dropdown-item">
                         <div class="info-block">
                             <span class="info-label">Общее количество мебели:</span>
-                            <span class="info-value" th:text="${'zero'}"></span>
+                            <span class="info-value" th:text="${totalFurniture}"></span>
                         </div>
                     </a>
                 </div>

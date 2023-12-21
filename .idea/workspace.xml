@@ -5,26 +5,59 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67253450-55d5-4ad6-a222-b43694a046e0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/controller/tech/TechController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/model/furniture/Furniture.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/repository/furniture/FurnitureRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/service/furniture/FurnitureService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/building/cabinet_attribute.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/tech/tech_in_cabinet.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/controller/furniture/FurnitureController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/controller/search/SearchController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/model/tech/dto/TechComputerInfoDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/model/tech/dto/TechPrinterInfoDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/service/search/SearchService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/user.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/furniture/furniture_in_cabinet.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/furniture/furniture_info.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/search/search_results_inventory_number.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/tech/tech_info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a9de163-3053-42fa-ae0b-ec0c2a775a76.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6a9de163-3053-42fa-ae0b-ec0c2a775a76.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a9de163-3053-42fa-ae0b-ec0c2a775a76/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6a9de163-3053-42fa-ae0b-ec0c2a775a76/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/account/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/account/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/account/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/account/AccountService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/controller/building/CabinetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/controller/building/CabinetController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/model/tech/Tech.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/model/tech/Tech.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/controller/tech/TechController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/controller/tech/TechController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/form/SampleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/form/SampleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/model/furniture/Furniture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/model/furniture/Furniture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/repository/furniture/FurnitureRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/repository/furniture/FurnitureRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/repository/tech/ComputerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/repository/tech/ComputerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/repository/tech/PrinterRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/repository/tech/PrinterRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/repository/tech/TechRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/repository/tech/TechRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/service/TechService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/service/tech/TechService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/service/building/CabinetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/service/building/CabinetService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/building/one_cabinet.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/building/one_cabinet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/service/furniture/FurnitureService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/service/furniture/FurnitureService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/service/tech/TechService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/service/tech/TechService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/bootstrap/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bootstrap/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/building/cabinet_attribute.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/building/cabinet_attribute.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/logout.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/logout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/tech/tech_in_cabinet.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/tech/tech_in_cabinet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/account/AccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/account/AccountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/account/AccountService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/account/AccountService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/controller/building/CabinetController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/controller/building/CabinetController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/model/tech/Tech.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/model/tech/Tech.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/controller/tech/TechController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/controller/tech/TechController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/form/SampleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/form/SampleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/model/furniture/Furniture.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/model/furniture/Furniture.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/repository/furniture/FurnitureRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/repository/furniture/FurnitureRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/repository/tech/ComputerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/repository/tech/ComputerRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/repository/tech/PrinterRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/repository/tech/PrinterRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/repository/tech/TechRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/repository/tech/TechRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/service/TechService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/service/building/CabinetService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/service/building/CabinetService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/service/furniture/FurnitureService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/service/furniture/FurnitureService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/service/tech/TechService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/service/tech/TechService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/bootstrap/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/bootstrap/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/building/one_cabinet.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/building/one_cabinet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/building/cabinet_attribute.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/building/cabinet_attribute.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/logout.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/logout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/tech/tech_in_cabinet.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/tech/tech_in_cabinet.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,9 +67,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -87,6 +120,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/admin" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates/bootstrap" />
     </key>
   </component>
@@ -125,7 +159,7 @@
       <workItem from="1702983456137" duration="1326000" />
       <workItem from="1702985670837" duration="3922000" />
       <workItem from="1702989624205" duration="2718000" />
-      <workItem from="1703008473935" duration="33947000" />
+      <workItem from="1703008473935" duration="60612000" />
     </task>
     <servers />
   </component>
@@ -160,6 +194,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/controller/building/DepartmentController.java</url>
           <line>50</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/controller/furniture/FurnitureController.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

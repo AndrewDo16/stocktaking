@@ -60,7 +60,11 @@ public class CabinetController {
         Optional<Cabinet> cabinet = cabinetService.findById(cabinetId);
         boolean hasTechInCabinet = cabinetService.hasTechInCabinet(cabinetId);
         boolean hasFurnitureInCabinet = cabinetService.hasFurnitureInCabinet(cabinetId);
+        long totalTech = cabinetService.getTotalTechForCabinet(cabinet.get());
+        long totalFurniture = cabinetService.getTotalFurnitureForCabinet(cabinet.get());
         model.addAttribute("cabinet", cabinet.get());
+        model.addAttribute("totalTech", totalTech);
+        model.addAttribute("totalFurniture", totalFurniture);
         model.addAttribute("hasTechInCabinet", hasTechInCabinet);
         model.addAttribute("hasFurnitureInCabinet", hasFurnitureInCabinet);
 

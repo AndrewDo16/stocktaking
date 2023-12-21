@@ -2,62 +2,67 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Моя веб-страница</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Stocktaking</title>
 
-  <!-- Подключение Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <!-- Подключение Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-  <!-- Ваш пользовательский CSS (если нужен) -->
-  <!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Ваш логотип</a>
-  <ul class="navbar-nav ml-auto">
-    <li class="nav-item active">
-      <div th:if="${#authorization.expr('isAuthenticated()')}">
-        <a class="nav-link" href="/building">Выбор филиала<span class="sr-only">(текущая)</span></a>
-      </div>
-    </li>
-    <li class="nav-item dropdown" th:authorize="${#authorization.expression('isAuthenticated()')}">
-      <div th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown link
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </div>
-    </li>
-  </ul>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Ваш логотип</a>
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Главная <span class="sr-only">(текущая)</span></a>
-      </li>
-      <li class="nav-item">
-        <div th:if="${#authorization.expr('isAuthenticated()')}">
-          <p class="nav-link" th:text="${#authentication.name}">Name</p>
-        </div>
-      </li>
-      <li class="nav-item">
-        <div th:if="${#authorization.expr('isAuthenticated()')}">
-          <a class="nav-link" href="/logout" th:href="@{/logout}">Выход</a>
-        </div>
-        <div th:unless="${#authorization.expr('isAuthenticated()')}">
-          <a class="nav-link" href="/login" th:href="@{/login}">Вход</a>
-        </div>
-      </li>
+        <li class="nav-item active">
+            <div th:if="${#authorization.expr('isAuthenticated()')}">
+                <a class="nav-link" href="/building">Выбор филиала<span class="sr-only">(текущая)</span></a>
+            </div>
+        </li>
+        <li class="nav-item dropdown" th:authorize="${#authorization.expression('isAuthenticated()')}">
+            <div th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Администрирование
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="/admin/user">Управление пользователями</a>
+                </div>
+            </div>
+        </li>
     </ul>
-  </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <form class="form-inline my-2 my-lg-0" action="/search/results" method="GET">
+                <div th:if="${#authorization.expr('isAuthenticated()')}">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Search"
+                           name="searchInventoryNumber">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Искать</button>
+                </div>
+            </form>
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Главная <span class="sr-only">(текущая)</span></a>
+            </li>
+            <li class="nav-item">
+                <div th:if="${#authorization.expr('isAuthenticated()')}">
+                    <p class="nav-link" th:text="${#authentication.name}">Name</p>
+                </div>
+            </li>
+            <li class="nav-item">
+                <div th:if="${#authorization.expr('isAuthenticated()')}">
+                    <a class="nav-link" href="/logout" th:href="@{/logout}">Выход</a>
+                </div>
+                <div th:unless="${#authorization.expr('isAuthenticated()')}">
+                    <a class="nav-link" href="/login" th:href="@{/login}">Вход</a>
+                </div>
+            </li>
+        </ul>
+    </div>
 </nav>
-<div class="container mt-4">
-  <!-- Здесь ваш контент -->
-</div>

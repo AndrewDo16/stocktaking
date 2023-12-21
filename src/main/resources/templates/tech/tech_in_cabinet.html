@@ -6,32 +6,31 @@
     <h1 class="display-4">Список техники</h1>
 
     <div class="row">
-        <div th:each="cabinet : ${cabinets}" class="col-md-4 mb-3">
+        <div th:each="tech : ${techList}" class="col-md-5 mb-3">
             <div class="list-group-item dropdown position-static">
                 <button class="btn btn-outline-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span th:text="${'Кабинет №: ' + cabinet.getCabinet().getCabinetNumber()}"></span>
+                    <span th:text="${'Инвентарный номер: ' + tech.getInventoryNumber() + ' ' + tech.getType()}"></span>
                 </button>
 
                 <div class="dropdown-menu">
-                    <a th:href="@{/building/department/{department_id}/cabinet/{cabinet_id}(department_id=${cabinet.getDepartment().getId()})(cabinet_id=${cabinet.getCabinet().getId()})}" class="dropdown-item">
+                    <a th:href="@{/tech/{tech_id}(tech_id=${tech.getId()})}" class="dropdown-item">
                         <div class="info-block">
-                            <span class="info-label">Корпус:</span>
-                            <span class="info-value" th:text="${cabinet.getCabinet().getCorp()}"></span>
+                            <span class="info-label">Серийный номер:</span>
+                            <span class="info-value" th:text="${tech.getSerialNumber()}"></span>
                         </div>
                         <div class="info-block">
-                            <span class="info-label">Этаж:</span>
-                            <span class="info-value" th:text="${cabinet.getCabinet().getFloor()}"></span>
+                            <span class="info-label">Модель:</span>
+                            <span class="info-value" th:text="${tech.getModel()}"></span>
                         </div>
                         <div class="info-block">
-                            <span class="info-label">Общее количесвто сотрудников:</span>
-                            <span class="info-value" th:text="${cabinet.getCabinet().getEmployees().size()}"></span>
-                            <!--                            <div th:each="employee : ${cabinet.getEmployees()}">-->
-                            <!--                                <span class="info-value" th:text="${employee.getName() + ' ' + employee.getSurname() + cabinet.getEmployees().size()}"></span><br>-->
-                            <!--                            </div>-->
+                            <span class="info-label">Дата регистрации:</span>
+                            <span class="info-value" th:text="${tech.getRegistrationDate()}"></span>
                         </div>
-                        <div class="info-block">
-                            <span class="info-label">Общее количество оборудования:</span>
-                            <span class="info-value" th:text="${cabinet.getTotalTech()}"></span>
+                        <div class="info-block"
+                             style="font-family: 'Arial', sans-serif; font-size: 16px; display: flex; align-items: center;">
+                            <span class="info-label" style="font-weight: bold;">На балансе?:</span>
+                            <span th:text="${tech.isActive() ? '&#8226;' : '&#8226;'}"
+                                  th:style="${tech.isActive()} ? 'color: green; font-size: 45px; margin-left: 8px;' : 'color: red; font-size: 24px; margin-left: 8px;'"></span>
                         </div>
                     </a>
                 </div>

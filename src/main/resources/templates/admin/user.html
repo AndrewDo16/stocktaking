@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:include="~{ 'bootstrap/header' }"></th:block>
+<body>
+<style>
+    .user-info {
+        font-size: 18px; /* Установите желаемый размер шрифта */
+        color: #333; /* Выберите цвет текста, который вам нравится */
+        margin-bottom: 8px; /* Добавьте немного отступа снизу для визуального разделения */
+    }
+
+    .btn-delete {
+        font-size: 14px; /* Уменьшите размер шрифта кнопки */
+    }
+</style>
+
+<div class="container mt-4" th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Левая часть с кнопками -->
+            <div class="col-md-6">
+                <h2>Управление пользователями</h2>
+                <!-- Кнопка для открытия модального окна -->
+                <button class="btn btn-primary" data-toggle="modal" data-target="#createUserModal">Создать нового
+                    пользователя
+                </button>
+            </div>
+
+            <!-- Правая часть с списком пользователей -->
+            <div class="col-md-6">
+                <h2>Список пользователей</h2>
+                <div th:each="acc : ${accounts}" class="user-item">
+                    <div class="user-info">
+                        <span th:text="${'Логин: ' + acc.getUsername() + ' Роль: ' + acc.getRole()}"></span>
+                    </div>
+                    <form th:method="POST" th:action="@{/account/{user_id}(user_id=${acc.getId()})}">
+                        <button type="submit" class="btn btn-danger btn-delete">Удалить пользователя</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для создания нового пользователя -->
+    <div class="modal" id="createUserModal" tabindex="-1" role="dialog" aria-labelledby="createUserModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createUserModalLabel">Создать нового пользователя</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Инпуты для ввода данных пользователя -->
+                    <form th:method="POST" th:action="@{/account}" th:object="${account}">
+                        <div class="form-group">
+                            <label for="loginInput">Логин</label>
+                            <input type="text" class="form-control" id="loginInput" placeholder="Введите логин"
+                                   th:field="*{username}">
+                        </div>
+                        <div class="form-group">
+                            <label for="passwordInput">Пароль</label>
+                            <input type="password" class="form-control" id="passwordInput" placeholder="Введите пароль"
+                                   th:field="*{password}">
+                        </div>
+                        <div class="form-group">
+                            <label>Роль</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="roleRadio" id="adminRadio"
+                                       value="ADMIN" th:field="*{role}">
+                                <label class="form-check-label" for="adminRadio">Админ</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="roleRadio" id="userRadio"
+                                       value="USER" th:field="*{role}">
+                                <label class="form-check-label" for="userRadio">Пользователь</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Создать</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-4" th:unless="${#authorization.expression('hasRole(''ADMIN'')')}">
+    <h1><span th:text="${#authentication.name}">Name</span>, you are not allowed to access to the page.</h1>
+</div>
+</body>
+<th:block th:include="~{ 'bootstrap/footer' }"></th:block>
+</html>

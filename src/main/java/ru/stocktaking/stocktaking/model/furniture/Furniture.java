@@ -36,6 +36,12 @@ public class Furniture {
     @Column(name = "model")
     private String model;
 
+    @Column(name = "producer")
+    private String producer;
+
+    @Column(name = "material")
+    private String material;
+
     @Column(name = "is_active")
     private boolean isActive;
 
