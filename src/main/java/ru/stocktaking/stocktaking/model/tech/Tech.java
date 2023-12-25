@@ -11,6 +11,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 /**
  * Created by AndreyDo16 on 19.12.2023
@@ -52,5 +53,8 @@ public class Tech {
     private boolean isActive;
 
     @Column(name = "registration_date")
-    private Timestamp registrationDate;
+    private LocalDateTime registrationDate;
+
+    @Column(name = "deregistration_date")
+    private LocalDateTime derigistrationDate;
 }

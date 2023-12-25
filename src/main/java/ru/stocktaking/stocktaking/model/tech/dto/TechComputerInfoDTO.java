@@ -4,6 +4,7 @@ import lombok.Builder;
 import lombok.Data;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 /**
  * Created by AndreyDo16 on 20.12.2023
@@ -17,7 +18,11 @@ public class TechComputerInfoDTO {
 
     private int cabinetNumber;
 
+    private int cabinetId;
+
     private String employeeName;
+
+    private int employeeId;
 
     private long serialNumber;
 
@@ -29,7 +34,9 @@ public class TechComputerInfoDTO {
 
     private boolean isActive;
 
-    private Timestamp registrationDate;
+    private String registrationDate;
+
+    private String derigistrationDate;
 
 
 //    computer

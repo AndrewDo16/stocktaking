@@ -7,6 +7,7 @@ import ru.stocktaking.stocktaking.model.building.Cabinet;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 /**
  * Created by AndreyDo16 on 20.12.2023
@@ -46,6 +47,8 @@ public class Furniture {
     private boolean isActive;
 
     @Column(name = "registration_date")
-    private Timestamp registrationDate;
+    private LocalDateTime registrationDate;
 
+    @Column(name = "deregistration_date")
+    private LocalDateTime derigistrationDate;
 }

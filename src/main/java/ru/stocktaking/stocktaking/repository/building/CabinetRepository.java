@@ -21,4 +21,5 @@ public interface CabinetRepository extends JpaRepository<Cabinet, Integer> {
     List<Cabinet> findByDepartment(Department department);
 
     List<Cabinet> findCabinetsByDepartmentId(int departmentId);
+    List<Cabinet> findCabinetsByBuilding(Building building);
 }

@@ -2,6 +2,7 @@ package ru.stocktaking.stocktaking.service.building;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ru.stocktaking.stocktaking.model.building.Building;
 import ru.stocktaking.stocktaking.model.building.Cabinet;
 import ru.stocktaking.stocktaking.repository.building.CabinetRepository;
 import ru.stocktaking.stocktaking.repository.furniture.FurnitureRepository;
@@ -34,6 +35,10 @@ public class CabinetService {
 
     public List<Cabinet> findCabinetByDepartmentId(int departmentId) {
         return cabinetRepository.findCabinetsByDepartmentId(departmentId);
+    }
+
+    public List<Cabinet> findCabinetByBuilding(Building building) {
+        return cabinetRepository.findByBuilding(building);
     }
 
     public long getTotalTechForCabinet(Cabinet cabinet) {

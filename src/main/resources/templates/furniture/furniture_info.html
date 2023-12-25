@@ -2,54 +2,122 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <th:block th:include="~{ 'bootstrap/header' }"></th:block>
 <body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
 <div class="container mt-4">
     <h1 class="display-4">Информация о предмете</h1>
 
-    <div class="col-md-4 mb-3">
-        <div style="border: 1px solid #ccc; padding: 15px; border-radius: 8px; background-color: #f8f9fa;">
-            <div class="info-block mt-2" style="font-family: 'Arial', sans-serif; font-size: 18px; color: #007bff;">
-                <span th:text="${'Инвентарный номер №: ' + furniture.getInventoryNumber()}"></span>
+    <div class="col-md-12 mb-3">
+        <div class="row">
+
+            <div class="col-md-6">
+                <div style="border: 1px solid #ccc; padding: 15px; border-radius: 8px; background-color: #f8f9fa;">
+                    <div class="info-block mt-2"
+                         style="font-family: 'Arial', sans-serif; font-size: 18px; color: #007bff;">
+                        <span th:text="${'Инвентарный номер №: ' + furniture.getInventoryNumber()}"></span>
+                    </div>
+
+                    <div class="info-block mt-2" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                        <span class="info-label" style="font-weight: bold; color: #28a745;">Тип:</span>
+                        <span class="info-value" th:text="${furniture.getType()}"></span>
+                    </div>
+                    <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                        <span class="info-label" style="font-weight: bold; color: #6c757d;">Модель:</span>
+                        <span class="info-value" th:text="${furniture.getModel()}"></span>
+                    </div>
+                    <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                        <span class="info-label" style="font-weight: bold; color: #6c757d;">Номер кабинета:</span>
+                        <span class="info-value" th:text="${furniture.getCabinetNumber()}"></span>
+                    </div>
+                    <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                        <span class="info-label" style="font-weight: bold; color: #6c757d;">Производитель:</span>
+                        <span class="info-value" th:text="${furniture.getProducer()}"></span>
+                    </div>
+                    <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                        <span class="info-label" style="font-weight: bold; color: #6c757d;">Материал:</span>
+                        <span class="info-value" th:text="${furniture.getMaterial()}"></span>
+                    </div>
+                    <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                        <span class="info-label" style="font-weight: bold; color: #dc3545;">Дата регистрации:</span>
+                        <span class="info-value" th:text="${furniture.getRegistrationDate()}"></span>
+                    </div>
+                    <div th:if="${furniture.getDerigistrationDate() != 'null'}" class="info-block"
+                         style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                        <span class="info-label" style="font-weight: bold; color: #dc3545;">Дата списания:</span>
+                        <span class="info-value" th:text="${furniture.getDerigistrationDate()}"></span>
+                    </div>
+                    <div class="info-block"
+                         style="font-family: 'Arial', sans-serif; font-size: 16px; display: flex; align-items: center;">
+                        <span class="info-label" style="font-weight: bold;">На балансе?:</span>
+                        <span th:text="${furniture.isActive() ? '&#8226;' : '&#8226;'}"
+                              th:style="${furniture.isActive()} ? 'color: green; font-size: 45px; margin-left: 8px;' : 'color: red; font-size: 45px; margin-left: 8px;'"></span>
+                    </div>
+                </div>
+                <div class="mt-3" th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
+                    <div th:if="${furniture.isActive()}">
+                        <form th:method="POST"
+                              th:action="@{/furniture/{furniture_id}(furniture_id=${furniture.getId()})}">
+                            <button type="submit" class="btn btn-danger">Списать мебель</button>
+                        </form>
+                    </div>
+                    <div th:unless="${furniture.isActive()}">
+                        <form th:method="POST"
+                              th:action="@{/furniture/life/{furniture_id}(furniture_id=${furniture.getId()})}">
+                            <button type="submit" class="btn btn-warning">Восстановить мебель</button>
+                        </form>
+                    </div>
+                </div>
             </div>
 
-            <div class="info-block mt-2" style="font-family: 'Arial', sans-serif; font-size: 16px;">
-                <span class="info-label" style="font-weight: bold; color: #28a745;">Тип:</span>
-                <span class="info-value" th:text="${furniture.getType()}"></span>
+
+            <div class="col-md-6" th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
+                <div style="border: 1px solid #ccc; padding: 15px; border-radius: 8px; background-color: #f8f9fa;">
+                    <div class="info-block mt-2"
+                         style="font-family: 'Arial', sans-serif; font-size: 18px; color: #007bff;">
+                        <span th:text="${'Корректировка данных для: ' + furniture.getType() + ' ' + furniture.getInventoryNumber()}"></span>
+                    </div>
+
+                    <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                        <label class="info-label font-weight-bold text-muted">Номер кабинета:</label>
+                        <div class="input-group">
+                            <label>
+                                <select class="form-control info-value" id="selectedCabinet"
+                                        th:field="${furniture.cabinetNumber}">
+                                    <option th:each="cabinet : ${cabinetList}" th:value="${cabinet.getId()}"
+                                            th:text="${'Отделение: ' + cabinet.getCorp() + ' Номер кабинета: ' + cabinet.getCabinetNumber()}"></option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <form th:method="POST" th:action="@{/furniture/edit/cabinet/}" id="editCabinetForm"
+                          th:data-furniture-id="${furniture.getId()}">
+                        <button type="submit" class="btn btn-success">Изменить кабинет</button>
+                    </form>
+                </div>
             </div>
-            <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px;">
-                <span class="info-label" style="font-weight: bold; color: #6c757d;">Модель:</span>
-                <span class="info-value" th:text="${furniture.getModel()}"></span>
-            </div>
-            <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px;">
-                <span class="info-label" style="font-weight: bold; color: #6c757d;">Номер кабинета:</span>
-                <span class="info-value" th:text="${furniture.getCabinet().getCabinetNumber()}"></span>
-            </div>
-            <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px;">
-                <span class="info-label" style="font-weight: bold; color: #6c757d;">Производитель:</span>
-                <span class="info-value" th:text="${furniture.getProducer()}"></span>
-            </div>
-            <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px;">
-                <span class="info-label" style="font-weight: bold; color: #6c757d;">Материал:</span>
-                <span class="info-value" th:text="${furniture.getMaterial()}"></span>
-            </div>
-            <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px;">
-                <span class="info-label" style="font-weight: bold; color: #dc3545;">Дата регистрации:</span>
-                <span class="info-value" th:text="${furniture.getRegistrationDate()}"></span>
-            </div>
-            <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px; display: flex; align-items: center;">
-                <span class="info-label" style="font-weight: bold;">На балансе?:</span>
-                <span th:text="${furniture.isActive() ? '&#8226;' : '&#8226;'}"
-                      th:style="${furniture.isActive()} ? 'color: green; font-size: 45px; margin-left: 8px;' : 'color: red; font-size: 45px; margin-left: 8px;'"></span>
-            </div>
-        </div>
-        <div class="mt-3" th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
-            <form th:method="POST" th:action="@{/furniture/{furniture_id}(furniture_id=${furniture.getId()})}">
-                <button type="submit" class="btn btn-danger">Списать предмет</button>
-            </form>
+
+            <script>
+                // Обработчик события изменения выпадающего списка
+                document.getElementById('selectedCabinet').addEventListener('change', updateFormAction);
+
+                // Вызов функции при загрузке страницы
+                document.addEventListener('DOMContentLoaded', updateFormAction);
+
+                function updateFormAction() {
+                    // Получение значения furniture_id из атрибута data-furniture-id формы
+                    var furnitureId = document.getElementById('editCabinetForm').getAttribute('data-furniture-id');
+                    // Обновление атрибута action формы
+                    var selectedCabinetId = document.getElementById('selectedCabinet').value;
+                    var form = document.getElementById('editCabinetForm');
+                    form.action = '/furniture/' + furnitureId + '/edit/cabinet/' + selectedCabinetId;
+                }
+            </script>
         </div>
     </div>
 </div>
-
 
 </body>
 <th:block th:include="~{ 'bootstrap/footer' }"></th:block>

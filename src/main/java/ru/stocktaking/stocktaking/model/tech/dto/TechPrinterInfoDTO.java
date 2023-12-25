@@ -5,6 +5,7 @@ import lombok.Data;
 
 import javax.persistence.Column;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 /**
  * Created by AndreyDo16 on 20.12.2023
@@ -18,7 +19,11 @@ public class TechPrinterInfoDTO {
 
     private int cabinetNumber;
 
+    private int cabinetId;
+
     private String employeeName;
+
+    private int employeeId;
 
     private long serialNumber;
 
@@ -30,7 +35,9 @@ public class TechPrinterInfoDTO {
 
     private boolean isActive;
 
-    private Timestamp registrationDate;
+    private String registrationDate;
+
+    private String derigistrationDate;
 
     private String producer;
 
