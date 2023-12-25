@@ -5,46 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67253450-55d5-4ad6-a222-b43694a046e0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/error.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/profile/password_error.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/profile/password_save.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/profile/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a9de163-3053-42fa-ae0b-ec0c2a775a76.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6a9de163-3053-42fa-ae0b-ec0c2a775a76.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a9de163-3053-42fa-ae0b-ec0c2a775a76/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6a9de163-3053-42fa-ae0b-ec0c2a775a76/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/account/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/account/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/account/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/account/AccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/account/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/account/AccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/controller/tech/TechController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/controller/tech/TechController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/form/SampleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/form/SampleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/model/tech/dto/TechComputerInfoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/model/tech/dto/TechComputerInfoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/model/tech/dto/TechPrinterInfoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/model/tech/dto/TechPrinterInfoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/service/tech/TechService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/stocktaking/stocktaking/service/tech/TechService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/bootstrap/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bootstrap/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/bootstrap/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bootstrap/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/tech/tech_in_cabinet.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/tech/tech_in_cabinet.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/tech/tech_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/tech/tech_info.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/account/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/account/Account.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/account/AccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/account/AccountController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/account/AccountService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/account/AccountService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/controller/tech/TechController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/controller/tech/TechController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/form/SampleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/form/SampleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/model/tech/dto/TechComputerInfoDTO$TechComputerInfoDTOBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/model/tech/dto/TechComputerInfoDTO$TechComputerInfoDTOBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/model/tech/dto/TechComputerInfoDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/model/tech/dto/TechComputerInfoDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/model/tech/dto/TechPrinterInfoDTO$TechPrinterInfoDTOBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/model/tech/dto/TechPrinterInfoDTO$TechPrinterInfoDTOBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/model/tech/dto/TechPrinterInfoDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/model/tech/dto/TechPrinterInfoDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/service/tech/TechService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/stocktaking/stocktaking/service/tech/TechService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/bootstrap/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/bootstrap/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/bootstrap/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/bootstrap/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/tech/tech_in_cabinet.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/tech/tech_in_cabinet.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/tech/tech_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/tech/tech_info.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +124,7 @@
       <workItem from="1702989624205" duration="2718000" />
       <workItem from="1703008473935" duration="61939000" />
       <workItem from="1703236988198" duration="12656000" />
-      <workItem from="1703487205391" duration="2991000" />
+      <workItem from="1703487205391" duration="3321000" />
     </task>
     <servers />
   </component>
