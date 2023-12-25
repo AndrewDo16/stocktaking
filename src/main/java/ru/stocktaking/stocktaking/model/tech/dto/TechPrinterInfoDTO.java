@@ -14,6 +14,8 @@ import java.sql.Timestamp;
 @Builder
 public class TechPrinterInfoDTO {
 
+    private int id;
+
     private int cabinetNumber;
 
     private long serialNumber;

@@ -65,8 +65,13 @@
                      style="font-family: 'Arial', sans-serif; font-size: 16px; display: flex; align-items: center;">
                     <span class="info-label" style="font-weight: bold;">На балансе?:</span>
                     <span th:text="${techInfo.isActive() ? '&#8226;' : '&#8226;'}"
-                          th:style="${techInfo.isActive()} ? 'color: green; font-size: 45px; margin-left: 8px;' : 'color: red; font-size: 24px; margin-left: 8px;'"></span>
+                          th:style="${techInfo.isActive()} ? 'color: green; font-size: 45px; margin-left: 8px;' : 'color: red; font-size: 45px; margin-left: 8px;'"></span>
                 </div>
+            </div>
+            <div>
+                <form th:method="POST" th:action="@{/tech/{techId}(techId=${techInfo.getId()})}">
+                    <input type="submit" value="Удалить технику!"/>
+                </form>
             </div>
         </div>
 
@@ -117,6 +122,11 @@
                     <span th:text="${techInfo.isActive() ? '&#8226;' : '&#8226;'}"
                           th:style="${techInfo.isActive()} ? 'color: green; font-size: 45px; margin-left: 8px;' : 'color: red; font-size: 24px; margin-left: 8px;'"></span>
                 </div>
+            </div>
+            <div>
+                <form th:method="POST" th:action="@{/tech/{techId}(techId=${techInfo.getId()})}">
+                    <input type="submit" value="Удалить технику!"/>
+                </form>
             </div>
         </div>
     </div>

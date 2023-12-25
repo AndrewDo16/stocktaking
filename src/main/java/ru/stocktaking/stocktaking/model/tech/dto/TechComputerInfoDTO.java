@@ -13,6 +13,8 @@ import java.sql.Timestamp;
 @Data
 public class TechComputerInfoDTO {
 
+    private int id;
+
     private int cabinetNumber;
 
     private long serialNumber;

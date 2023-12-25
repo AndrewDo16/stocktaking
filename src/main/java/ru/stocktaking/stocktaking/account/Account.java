@@ -21,6 +21,16 @@ public class Account {
 
     private String role;
 
+    private String confirmPassword;
+
+    public String getConfirmPassword() {
+        return confirmPassword;
+    }
+
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
+    }
+
     public Integer getId() {
         return id;
     }

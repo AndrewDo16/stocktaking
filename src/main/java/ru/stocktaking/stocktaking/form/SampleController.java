@@ -55,4 +55,14 @@ public class SampleController {
         return "admin/user";
     }
 
+    @GetMapping("/profile")
+    public String profile(Model model, Principal principal) {
+        Account account = accountService.findByUsername(principal.getName());
+
+        model.addAttribute("account", account);
+        model.addAttribute("principal", principal);
+
+        return "profile/profile";
+    }
+
 }

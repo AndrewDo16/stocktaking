@@ -31,15 +31,13 @@
             <div class="col-md-6">
                 <h2>Список пользователей</h2>
                 <div th:each="acc : ${accounts}" class="user-item">
-                    <div class="user-info">
+                    <button class="btn btn-primary btn-block mb-2" data-toggle="modal" data-target="#editUserModal"
+                            th:data-accid="${acc.getId()}">
                         <span th:text="${'Логин: ' + acc.getUsername() + ' Роль: ' + acc.getRole()}"></span>
-                    </div>
-                    <form th:method="POST" th:action="@{/account/{user_id}(user_id=${acc.getId()})}">
-                        <button type="submit" class="btn btn-danger btn-delete">Удалить пользователя</button>
-                    </form>
+                    </button>
                 </div>
-
             </div>
+
         </div>
     </div>
 
@@ -80,17 +78,106 @@
                                 <label class="form-check-label" for="userRadio">Пользователь</label>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Создать</button>
+                        <button style=" width: 172px; height: 35px;" type="submit" class="btn btn-primary">Создать</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Модальное окно для редактирования пользователя -->
+    <div class="modal" id="editUserModal" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editUserModalLabel">Редактировать пользователя</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Форма для редактирования данных пользователя -->
+                    <form th:method="POST" th:action="@{/account/update}" th:object="${account}">
+                        <input type="hidden" id="editUserId" th:field="*{id}">
+                        <div class="form-group">
+                            <label for="editUsername">Логин</label>
+                            <input type="text" class="form-control" id="editUsername" th:field="*{username}">
+                        </div>
+                        <div class="form-group">
+                            <label for="editPassword">Пароль</label>
+                            <input type="password" class="form-control" id="editPassword" th:field="*{password}">
+                        </div>
+                        <div class="form-group">
+                            <label>Роль</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="editRoleRadio" id="editAdminRadio"
+                                       value="ADMIN" th:field="*{role}">
+                                <label class="form-check-label" for="editAdminRadio">Админ</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="editRoleRadio" id="editUserRadio"
+                                       value="USER" th:field="*{role}">
+                                <label class="form-check-label" for="editUserRadio">Пользователь</label>
+                            </div>
+                        </div>
+                        <button style=" width: 172px; height: 35px;" type="submit" class="btn btn-primary">Обновить
+                        </button>
+                    </form>
+                    <form th:method="POST" th:action="@{/account/delete}" th:object="${account}">
+                        <input type="hidden" id="deleteUserId" name="user_id" value="" th:field="*{id}">
+                        <input type="hidden" id="deleteUserUsername" value="" th:field="*{username}">
+                        <input type="hidden" id="deleteUserPassword" value="" th:field="*{password}">
+                        <input type="hidden" id="deleteUserRole" value="" th:field="*{role}">
+
+                        <button type="submit" class="btn btn-danger btn-delete">Удалить пользователя</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </div>
 
 <div class="container mt-4" th:unless="${#authorization.expression('hasRole(''ADMIN'')')}">
     <h1><span th:text="${#authentication.name}">Name</span>, you are not allowed to access to the page.</h1>
 </div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+        $('#editUserModal').on('show.bs.modal', function (event) {
+            var userItem = $(event.relatedTarget); // Кнопка, вызвавшая модальное окно
+            var userId = userItem.data('accid'); // Идентификатор пользователя из data-accid
+            var modal = $(this);
+
+            console.log(userId);
+
+            // Получение данных пользователя через AJAX или другим способом
+            $.ajax({
+                url: '/account/' + userId,
+                type: 'GET',
+                success: function (user) {
+                    // Установка значений полей модального окна
+                    modal.find('#editUserId').val(user.id);
+                    modal.find('#editUsername').val(user.username);
+                    modal.find('#editPassword').val(user.password);
+                    modal.find('#deleteUserId').val(user.id);
+                    modal.find('#deleteUserUsername').val(user.username);
+                    modal.find('#deleteUserPassword').val(user.password);
+                    modal.find('#deleteUserRole').val(user.role);
+
+                    // Установка значения радио-кнопки в соответствии с ролью пользователя
+                    if (user.role === 'ADMIN') {
+                        modal.find('#editAdminRadio').prop('checked', true);
+                    } else {
+                        modal.find('#editUserRadio').prop('checked', true);
+                    }
+                }
+            });
+        });
+    });
+</script>
 </body>
 <th:block th:include="~{ 'bootstrap/footer' }"></th:block>
 </html>

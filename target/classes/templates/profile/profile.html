@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:include="~{ 'bootstrap/header' }"></th:block>
+<body>
+
+<div class="container mt-4" th:if="${#authorization.expr('isAuthenticated()')}">
+    <h2>Форма смены пароля</h2>
+    <div class="col-md-6">
+        <form th:method="POST" th:action="@{/account/edit_password}" th:object="${account}">
+            <input type="hidden" id="username" size="20" th:field="*{username}" th:value="${principal.getName()}" required>
+            <!-- Инпут для нового пароля -->
+            <div class="form-group">
+                <label for="newPassword">Новый пароль:</label>
+                <input type="password" class="form-control" id="newPassword" size="20" th:field="*{password}" required>
+            </div>
+
+            <!-- Инпут для подтверждения пароля -->
+            <div class="form-group">
+                <label for="confirmPassword">Подтвердите пароль:</label>
+                <input type="password" class="form-control" th:field="*{confirmPassword}" id="confirmPassword" size="20" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Изменить пароль</button>
+        </form>
+    </div>
+
+    <div class="container mt-4" th:unless="${#authorization.expr('isAuthenticated()')}">
+        <h1><span th:text="${#authentication.name}">Name</span>, you are not allowed to access to the page.</h1>
+    </div>
+</div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    document.addEventListener('DOMContentLoaded', function () {
+        var form = document.getElementById('account');
+        form.addEventListener('submit', function (event) {
+            var newPassword = form.querySelector('#newPassword').value;
+            var confirmPassword = form.querySelector('#confirmPassword').value;
+
+            if (newPassword !== confirmPassword) {
+                alert('Пароли не совпадают!');
+                event.preventDefault();
+            }
+        });
+    });
+    /*]]>*/
+</script>
+
+</body>
+<th:block th:include="~{ 'bootstrap/footer' }"></th:block>
+</html>

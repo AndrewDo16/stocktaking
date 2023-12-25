@@ -53,6 +53,7 @@ public class TechService {
 
     private TechPrinterInfoDTO convertTechWithPrinterToTechInfoDTO(Optional<Tech> tech, Optional<Printer> printer) {
         return TechPrinterInfoDTO.builder()
+                .id(tech.get().getId())
                 .cabinetNumber(tech.get().getCabinet().getCabinetNumber())
                 .serialNumber(tech.get().getSerialNumber())
                 .inventoryNumber(tech.get().getInventoryNumber())
@@ -69,6 +70,7 @@ public class TechService {
 
     private TechComputerInfoDTO convertTechWithComputerToTechInfoDTO(Optional<Tech> tech, Optional<Computer> computer) {
         return TechComputerInfoDTO.builder()
+                .id(tech.get().getId())
                 .cabinetNumber(tech.get().getCabinet().getCabinetNumber())
                 .serialNumber(tech.get().getSerialNumber())
                 .inventoryNumber(tech.get().getInventoryNumber())
@@ -87,5 +89,9 @@ public class TechService {
                 .build();
     }
 
+    public void deleteTech(int techId) {
+        Optional<Tech> tech = techRepository.findById(techId);
+        tech.ifPresent(value -> value.setActive(false));
+    }
 
 }

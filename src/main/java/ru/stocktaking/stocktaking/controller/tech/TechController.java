@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import ru.stocktaking.stocktaking.model.building.Cabinet;
 import ru.stocktaking.stocktaking.model.tech.Tech;
@@ -54,5 +55,11 @@ public class TechController {
 
         }
         return "tech/tech_info";
+    }
+
+    @PostMapping("{techId}")
+    public String deleteTech(@PathVariable("techId") int techId) {
+        techService.deleteTech(techId);
+        return "redirect:/tech/" + techId;
     }
 }
