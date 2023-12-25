@@ -13,4 +13,5 @@ public class DepartmentDTO {
     private Department department;
     private long totalCabinets;
     private long totalTech;
+    private long totalFurniture;
 }

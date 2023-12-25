@@ -2,6 +2,7 @@ package ru.stocktaking.stocktaking.service.furniture;
 
 import org.springframework.stereotype.Service;
 import ru.stocktaking.stocktaking.model.furniture.Furniture;
+import ru.stocktaking.stocktaking.model.tech.Tech;
 import ru.stocktaking.stocktaking.repository.furniture.FurnitureRepository;
 
 import java.util.List;
@@ -26,6 +27,12 @@ public class FurnitureService {
 
     public Optional<Furniture> findById(int furnitureId) {
         return furnitureRepository.findById(furnitureId);
+    }
+
+    public void deleteFurniture(int furnitureId) {
+        Optional<Furniture> furniture = furnitureRepository.findById(furnitureId);
+        furniture.ifPresent(value -> value.setActive(false));
+        furnitureRepository.save(furniture.get());
     }
 
 }

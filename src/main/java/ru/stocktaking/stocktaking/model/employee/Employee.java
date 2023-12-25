@@ -4,8 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import ru.stocktaking.stocktaking.model.building.Cabinet;
+import ru.stocktaking.stocktaking.model.tech.Tech;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by AndreyDo16 on 19.12.2023
@@ -25,6 +27,9 @@ public class Employee {
     @ManyToOne
     @JoinColumn(name = "cabinet_id")
     private Cabinet cabinet;
+
+    @OneToMany
+    private List<Tech> techList;
 
     @Column(name = "name")
     private String name;

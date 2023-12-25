@@ -55,6 +55,7 @@ public class TechService {
         return TechPrinterInfoDTO.builder()
                 .id(tech.get().getId())
                 .cabinetNumber(tech.get().getCabinet().getCabinetNumber())
+                .employeeName(tech.get().getEmployee().getName() + " " + tech.get().getEmployee().getSurname())
                 .serialNumber(tech.get().getSerialNumber())
                 .inventoryNumber(tech.get().getInventoryNumber())
                 .type(tech.get().getType())
@@ -72,6 +73,7 @@ public class TechService {
         return TechComputerInfoDTO.builder()
                 .id(tech.get().getId())
                 .cabinetNumber(tech.get().getCabinet().getCabinetNumber())
+                .employeeName(tech.get().getEmployee().getName() + " " + tech.get().getEmployee().getSurname())
                 .serialNumber(tech.get().getSerialNumber())
                 .inventoryNumber(tech.get().getInventoryNumber())
                 .type(tech.get().getType())
@@ -92,6 +94,7 @@ public class TechService {
     public void deleteTech(int techId) {
         Optional<Tech> tech = techRepository.findById(techId);
         tech.ifPresent(value -> value.setActive(false));
+        techRepository.save(tech.get());
     }
 
 }

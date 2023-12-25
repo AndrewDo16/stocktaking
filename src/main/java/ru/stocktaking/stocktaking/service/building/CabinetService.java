@@ -37,11 +37,11 @@ public class CabinetService {
     }
 
     public long getTotalTechForCabinet(Cabinet cabinet) {
-        return techRepository.countByCabinet(cabinet);
+        return techRepository.countActiveTechByCabinet(cabinet);
     }
 
     public long getTotalFurnitureForCabinet(Cabinet cabinet) {
-        return furnitureRepository.countByCabinet(cabinet);
+        return furnitureRepository.countActiveFurnitureByCabinet(cabinet);
     }
 
     public boolean hasTechInCabinet(int cabinetId) {

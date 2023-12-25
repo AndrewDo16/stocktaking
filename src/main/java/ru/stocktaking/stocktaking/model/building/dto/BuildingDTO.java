@@ -13,4 +13,5 @@ public class BuildingDTO {
     private Building building;
     private long totalCabinets;
     private long totalTech;
+    private long totalFurniture;
 }

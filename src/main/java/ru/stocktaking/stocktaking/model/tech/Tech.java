@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import ru.stocktaking.stocktaking.model.building.Cabinet;
+import ru.stocktaking.stocktaking.model.employee.Employee;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
@@ -30,6 +31,10 @@ public class Tech {
     @ManyToOne
     @JoinColumn(name = "cabinet_id")
     private Cabinet cabinet;
+
+    @ManyToOne
+    @JoinColumn(name = "employee_id")
+    private Employee employee;
 
     @Column(name = "serial_number", unique = true)
     private long serialNumber;

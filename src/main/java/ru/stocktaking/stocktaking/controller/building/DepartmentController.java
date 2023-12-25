@@ -40,10 +40,12 @@ public class DepartmentController {
         for (Department department : departments) {
             long totalCabinets = departmentService.getTotalCabinetsForDepartment(department);
             long totalTech = departmentService.getTotalTechForDepartment(department);
+            long totalFurniture = departmentService.getTotalFurnitureForDepartment(department);
             DepartmentDTO departmentDTO = new DepartmentDTO();
             departmentDTO.setDepartment(department);
             departmentDTO.setTotalCabinets(totalCabinets);
             departmentDTO.setTotalTech(totalTech);
+            departmentDTO.setTotalFurniture(totalFurniture);
             departmentDTOList.add(departmentDTO);
         }
 

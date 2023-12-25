@@ -17,6 +17,8 @@ public class TechComputerInfoDTO {
 
     private int cabinetNumber;
 
+    private String employeeName;
+
     private long serialNumber;
 
     private long inventoryNumber;

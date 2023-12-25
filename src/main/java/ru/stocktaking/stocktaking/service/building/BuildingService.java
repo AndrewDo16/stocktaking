@@ -6,6 +6,7 @@ import ru.stocktaking.stocktaking.model.building.Building;
 import ru.stocktaking.stocktaking.model.building.Cabinet;
 import ru.stocktaking.stocktaking.repository.building.BuildingRepository;
 import ru.stocktaking.stocktaking.repository.building.CabinetRepository;
+import ru.stocktaking.stocktaking.repository.furniture.FurnitureRepository;
 import ru.stocktaking.stocktaking.repository.tech.TechRepository;
 
 import java.util.List;
@@ -21,12 +22,14 @@ public class BuildingService {
     private final BuildingRepository buildingRepository;
     private final CabinetRepository cabinetRepository;
     private final TechRepository techRepository;
+    private final FurnitureRepository furnitureRepository;
 
     @Autowired
-    public BuildingService(BuildingRepository buildingRepository, CabinetRepository cabinetRepository, TechRepository techRepository) {
+    public BuildingService(BuildingRepository buildingRepository, CabinetRepository cabinetRepository, TechRepository techRepository, FurnitureRepository furnitureRepository) {
         this.buildingRepository = buildingRepository;
         this.cabinetRepository = cabinetRepository;
         this.techRepository = techRepository;
+        this.furnitureRepository = furnitureRepository;
     }
 
     public List<Building> findAllBuilding() {
@@ -42,10 +45,21 @@ public class BuildingService {
         long totalTech = 0;
 
         for (Cabinet cabinet : cabinets) {
-            totalTech += techRepository.countByCabinet(cabinet);
+            totalTech += techRepository.countActiveTechByCabinet(cabinet);
         }
 
         return totalTech;
+    }
+
+    public long getTotalFurnitureForBuilding(Building building) {
+        List<Cabinet> cabinets = cabinetRepository.findByBuilding(building);
+        long totalFurniture = 0;
+
+        for (Cabinet cabinet : cabinets) {
+            totalFurniture += furnitureRepository.countActiveFurnitureByCabinet(cabinet);
+        }
+
+        return totalFurniture;
     }
 
     public Optional <Building> findOneBuilding(int buildingId) {

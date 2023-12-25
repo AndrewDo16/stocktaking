@@ -1,9 +1,12 @@
 package ru.stocktaking.stocktaking.repository.furniture;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import ru.stocktaking.stocktaking.model.building.Cabinet;
 import ru.stocktaking.stocktaking.model.furniture.Furniture;
+import ru.stocktaking.stocktaking.model.tech.Tech;
 
 import java.util.List;
 
@@ -13,10 +16,12 @@ import java.util.List;
 
 @Repository
 public interface FurnitureRepository extends JpaRepository<Furniture, Integer> {
-    List<Furniture> findFurnitureByCabinetId(int cabinetId);
+    @Query("SELECT furniture FROM Furniture furniture WHERE furniture.isActive = true AND furniture.cabinet.id = :cabinetId")
+    List<Furniture> findFurnitureByCabinetId(@Param("cabinetId") int cabinetId);
     boolean existsByCabinetId(int cabinetId);
 
-    long countByCabinet(Cabinet cabinet);
+    @Query("SELECT COUNT(furniture) FROM Furniture furniture WHERE furniture.isActive = true AND furniture.cabinet = :cabinet")
+    long countActiveFurnitureByCabinet(@Param("cabinet") Cabinet cabinet);
 
     Furniture findFurnitureByInventoryNumber(long inventoryNumber);
 }

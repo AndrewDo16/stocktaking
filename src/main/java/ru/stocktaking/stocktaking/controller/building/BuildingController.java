@@ -40,10 +40,12 @@ public class BuildingController {
         for (Building building : buildingList) {
             long totalCabinets = buildingService.getTotalCabinetsForBuilding(building);
             long totalTech = buildingService.getTotalTechForBuilding(building);
+            long totalFurniture = buildingService.getTotalFurnitureForBuilding(building);
             BuildingDTO buildingDTO = new BuildingDTO();
             buildingDTO.setBuilding(building);
             buildingDTO.setTotalCabinets(totalCabinets);
             buildingDTO.setTotalTech(totalTech);
+            buildingDTO.setTotalFurniture(totalFurniture);
             buildingDTOList.add(buildingDTO);
         }
         model.addAttribute("building", buildingDTOList);

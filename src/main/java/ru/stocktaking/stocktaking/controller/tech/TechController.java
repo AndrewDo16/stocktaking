@@ -26,12 +26,10 @@ import java.util.Optional;
 public class TechController {
 
     private final TechService techService;
-    private final CabinetService cabinetService;
 
     @Autowired
-    public TechController(TechService techService, CabinetService cabinetService) {
+    public TechController(TechService techService) {
         this.techService = techService;
-        this.cabinetService = cabinetService;
     }
 
     @GetMapping("cabinet/{cabinetId}")

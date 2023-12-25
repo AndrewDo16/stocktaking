@@ -18,6 +18,8 @@ public class TechPrinterInfoDTO {
 
     private int cabinetNumber;
 
+    private String employeeName;
+
     private long serialNumber;
 
     private long inventoryNumber;

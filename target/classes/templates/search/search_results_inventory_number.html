@@ -25,6 +25,14 @@
                             <span class="info-value" th:text="${searchResults.getModel()}"></span>
                         </div>
                         <div class="info-block">
+                            <span class="info-label">Филиал:</span>
+                            <span class="info-value" th:text="${searchResults.getCabinet().getBuilding().getName()}"></span>
+                        </div>
+                        <div class="info-block">
+                            <span class="info-label">Отделение:</span>
+                            <span class="info-value" th:text="${searchResults.getCabinet().getDepartment().getName()}"></span>
+                        </div>
+                        <div class="info-block">
                             <span class="info-label">Номер кабинета:</span>
                             <span class="info-value" th:text="${searchResults.getCabinet().getCabinetNumber()}"></span>
                         </div>
@@ -58,6 +66,14 @@
                         <div class="info-block">
                             <span class="info-label">Модель:</span>
                             <span class="info-value" th:text="${searchResults.getModel()}"></span>
+                        </div>
+                        <div class="info-block">
+                            <span class="info-label">Филиал:</span>
+                            <span class="info-value" th:text="${searchResults.getCabinet().getBuilding().getName()}"></span>
+                        </div>
+                        <div class="info-block">
+                            <span class="info-label">Отделение:</span>
+                            <span class="info-value" th:text="${searchResults.getCabinet().getDepartment().getName()}"></span>
                         </div>
                         <div class="info-block">
                             <span class="info-label">Номер кабинета:</span>

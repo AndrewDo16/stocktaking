@@ -39,8 +39,13 @@
             <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px; display: flex; align-items: center;">
                 <span class="info-label" style="font-weight: bold;">На балансе?:</span>
                 <span th:text="${furniture.isActive() ? '&#8226;' : '&#8226;'}"
-                      th:style="${furniture.isActive()} ? 'color: green; font-size: 45px; margin-left: 8px;' : 'color: red; font-size: 24px; margin-left: 8px;'"></span>
+                      th:style="${furniture.isActive()} ? 'color: green; font-size: 45px; margin-left: 8px;' : 'color: red; font-size: 45px; margin-left: 8px;'"></span>
             </div>
+        </div>
+        <div class="mt-3" th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
+            <form th:method="POST" th:action="@{/furniture/{furniture_id}(furniture_id=${furniture.getId()})}">
+                <button type="submit" class="btn btn-danger">Списать предмет</button>
+            </form>
         </div>
     </div>
 </div>

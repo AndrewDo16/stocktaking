@@ -11,4 +11,5 @@ import ru.stocktaking.stocktaking.model.building.Cabinet;
 public class CabinetDTO {
     private Cabinet cabinet;
     private long totalTech;
+    private long totalFurniture;
 }

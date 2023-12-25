@@ -21,6 +21,10 @@
                     <span class="info-value" th:text="${techInfo.getCabinetNumber()}"></span>
                 </div>
                 <div class="info-block mt-2" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                    <span class="info-label" style="font-weight: bold; color: #6c757d;">Закреплен за:</span>
+                    <span class="info-value" th:text="${techInfo.getEmployeeName()}"></span>
+                </div>
+                <div class="info-block mt-2" style="font-family: 'Arial', sans-serif; font-size: 16px;">
                     <span class="info-label" style="font-weight: bold; color: #6c757d;">Серийный номер:</span>
                     <span class="info-value" th:text="${techInfo.getSerialNumber()}"></span>
                 </div>
@@ -67,9 +71,9 @@
                           th:style="${techInfo.isActive()} ? 'color: green; font-size: 45px; margin-left: 8px;' : 'color: red; font-size: 45px; margin-left: 8px;'"></span>
                 </div>
             </div>
-            <div>
+            <div class="mt-3" th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
                 <form th:method="POST" th:action="@{/tech/{techId}(techId=${techInfo.getId()})}">
-                    <input type="submit" value="Удалить технику!"/>
+                    <button type="submit" class="btn btn-danger">Списать технику</button>
                 </form>
             </div>
         </div>
@@ -84,8 +88,12 @@
                     <span class="info-value" th:text="${techInfo.getType()}"></span>
                 </div>
                 <div class="info-block mt-2" style="font-family: 'Arial', sans-serif; font-size: 16px;">
-                    <span class="info-label" style="font-weight: bold; color: #6c757d;">Номер кабинета::</span>
+                    <span class="info-label" style="font-weight: bold; color: #6c757d;">Номер кабинета:</span>
                     <span class="info-value" th:text="${techInfo.getCabinetNumber()}"></span>
+                </div>
+                <div class="info-block mt-2" style="font-family: 'Arial', sans-serif; font-size: 16px;">
+                    <span class="info-label" style="font-weight: bold; color: #6c757d;">Закреплен за:</span>
+                    <span class="info-value" th:text="${techInfo.getEmployeeName()}"></span>
                 </div>
                 <div class="info-block mt-2" style="font-family: 'Arial', sans-serif; font-size: 16px;">
                     <span class="info-label" style="font-weight: bold; color: #6c757d;">Серийный номер:</span>
@@ -122,9 +130,9 @@
                           th:style="${techInfo.isActive()} ? 'color: green; font-size: 45px; margin-left: 8px;' : 'color: red; font-size: 24px; margin-left: 8px;'"></span>
                 </div>
             </div>
-            <div>
+            <div class="mt-3" th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
                 <form th:method="POST" th:action="@{/tech/{techId}(techId=${techInfo.getId()})}">
-                    <input type="submit" value="Удалить технику!"/>
+                    <button type="submit" class="btn btn-danger">Списать технику</button>
                 </form>
             </div>
         </div>

@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import ru.stocktaking.stocktaking.model.furniture.Furniture;
 import ru.stocktaking.stocktaking.model.tech.Tech;
@@ -45,5 +46,11 @@ public class FurnitureController {
         model.addAttribute("furniture", furniture.get());
 
         return "furniture/furniture_info";
+    }
+
+    @PostMapping("{furniture_id}")
+    public String deleteTech(@PathVariable("furniture_id") int furnitureId) {
+        furnitureService.deleteFurniture(furnitureId);
+        return "redirect:/furniture/" + furnitureId;
     }
 }

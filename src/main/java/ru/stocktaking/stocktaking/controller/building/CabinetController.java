@@ -44,9 +44,11 @@ public class CabinetController {
 
         for (Cabinet cabinet : cabinets) {
             long totalTech = cabinetService.getTotalTechForCabinet(cabinet);
+            long totalFurniture = cabinetService.getTotalFurnitureForCabinet(cabinet);
             CabinetDTO cabinetDTO = new CabinetDTO();
             cabinetDTO.setCabinet(cabinet);
             cabinetDTO.setTotalTech(totalTech);
+            cabinetDTO.setTotalFurniture(totalFurniture);
             cabinetDTOList.add(cabinetDTO);
         }
 

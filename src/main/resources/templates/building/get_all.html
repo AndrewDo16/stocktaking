@@ -24,8 +24,12 @@
                             <span class="info-value" th:text="${build.getTotalCabinets()}"></span>
                         </div>
                         <div class="info-block">
-                            <span class="info-label">Общее количество оборудования:</span>
+                            <span class="info-label">Общее количество активного оборудования:</span>
                             <span class="info-value" th:text="${build.getTotalTech()}"></span>
+                        </div>
+                        <div class="info-block">
+                            <span class="info-label">Общее количество мебели на балансе:</span>
+                            <span class="info-value" th:text="${build.getTotalFurniture()}"></span>
                         </div>
                     </a>
                 </div>
