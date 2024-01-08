@@ -183,13 +183,11 @@
                     <div class="info-block" style="font-family: 'Arial', sans-serif; font-size: 16px;">
                         <label class="info-label font-weight-bold text-muted">Номер кабинета:</label>
                         <div class="input-group">
-                            <label>
-                                <select class="form-control info-value" id="selectedCabinet"
-                                        th:field="${techInfo.cabinetNumber}">
-                                    <option th:each="cabinet : ${cabinetList}" th:value="${cabinet.getId()}"
-                                            th:text="${'Отделение: ' + cabinet.getCorp() + ' Номер кабинета: ' + cabinet.getCabinetNumber()}"></option>
-                                </select>
-                            </label>
+                            <select class="form-control info-value" id="selectedCabinet" name="cabinetId">
+                                <option th:each="cabinet : ${cabinetList}" th:value="${cabinet.getId()}"
+                                        th:text="${'Отделение: ' + cabinet.getCorp() + ' Номер кабинета: ' + cabinet.getCabinetNumber()}"
+                                        th:selected="${cabinet.getId() eq techInfo.getCabinetId()}"></option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -250,12 +248,14 @@
                 document.addEventListener('DOMContentLoaded', updateFormAction);
 
                 function updateFormAction() {
-                    // Получение значения tech_id из атрибута data-tech-id формы
-                    var techId = document.getElementById('editCabinetForm').getAttribute('data-tech-id');
                     // Обновление атрибута action формы
                     var selectedCabinetId = document.getElementById('selectedCabinet').value;
                     var form = document.getElementById('editCabinetForm');
-                    form.action = '/tech/' + techId + '/edit/cabinet/' + selectedCabinetId;
+                    // Добавим проверку наличия значения в поле data-tech-id
+                    var techId = form.getAttribute('data-tech-id');
+                    if (techId && selectedCabinetId) {
+                        form.action = '/tech/' + techId + '/edit/cabinet/' + selectedCabinetId;
+                    }
                 }
             </script>
 
