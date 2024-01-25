@@ -15,7 +15,21 @@ services:
       - ../2. Init Database:/docker-entrypoint-initdb.d
       - postgres-data:/var/lib/postgresql/data
     restart: unless-stopped
-
+  web:
+    container_name: web
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '8081:8081'
+    depends_on:
+      - service-db
+    environment:
+      - SERVER_PORT=8081
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://service-db/postgres
+      - TZ=Europe/Moscow
+      - LOG_MODE=dev
 
 volumes:
   postgres-data:
